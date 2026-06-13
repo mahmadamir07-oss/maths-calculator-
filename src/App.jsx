@@ -1022,7 +1022,7 @@ function AISolver({ externalInput, onClearExternal }) {
     const newMsgs = [...msgs, { role: "user", content: txt }];
     setMsgs(newMsgs); setLoading(true);
     try {
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
+      const res = await fetch("/api/solve", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
